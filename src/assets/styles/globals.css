@@ -571,3 +571,363 @@
     margin-top: 18px;
   }
 }
+
+/* =========================================
+   SIDEBAR — LABGUARDIAN AI
+   ========================================= */
+
+.app-sidebar {
+  --sidebar-width: 264px;
+
+  position: fixed;
+  inset: 0 auto 0 0;
+  z-index: 40;
+  width: var(--sidebar-width);
+  height: 100dvh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background: #ffffff;
+  border-right: 1px solid #e8edf3;
+  color: #334155;
+  scrollbar-width: thin;
+  scrollbar-color: #dbe3ed transparent;
+}
+
+.sidebar-content {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  padding: 25px 16px 16px;
+}
+
+/* Marca */
+
+.sidebar-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 7px;
+  margin-bottom: 28px;
+}
+
+.sidebar-brand-icon {
+  display: grid;
+  flex-shrink: 0;
+  width: 43px;
+  height: 43px;
+  place-items: center;
+  color: #ffffff;
+  background: linear-gradient(145deg, #2563eb, #0f9f95);
+  border-radius: 14px;
+  box-shadow: 0 5px 12px rgb(37 99 235 / 17%);
+}
+
+.sidebar-brand-text {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.sidebar-brand-name {
+  color: #172033;
+  font-size: 19px;
+  font-weight: 750;
+  letter-spacing: -0.7px;
+  line-height: 1.15;
+}
+
+.sidebar-brand-subtitle {
+  color: #94a3b8;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1.1px;
+  white-space: nowrap;
+}
+
+/* Tarjeta informativa */
+
+.sidebar-system-card {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 13px 12px;
+  margin-bottom: 28px;
+  background: #f8fafc;
+  border: 1px solid #edf1f6;
+  border-radius: 13px;
+}
+
+.sidebar-system-icon {
+  display: grid;
+  width: 38px;
+  height: 38px;
+  flex-shrink: 0;
+  place-items: center;
+  color: #0d9488;
+  background: #e6f7f4;
+  border-radius: 10px;
+}
+
+.sidebar-system-info {
+  display: flex;
+  min-width: 0;
+  flex: 1;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.sidebar-system-title {
+  color: #334155;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.sidebar-system-description {
+  color: #94a3b8;
+  font-size: 11px;
+}
+
+.sidebar-system-indicator {
+  width: 8px;
+  height: 8px;
+  flex-shrink: 0;
+  background: #94a3b8;
+  border-radius: 50%;
+}
+
+/* Grupos de navegación */
+
+.sidebar-navigation {
+  display: flex;
+  flex-direction: column;
+  gap: 27px;
+}
+
+.sidebar-group-title {
+  padding: 0 12px;
+  margin: 0 0 10px;
+  color: #94a3b8;
+  font-size: 10px;
+  font-weight: 750;
+  letter-spacing: 1.25px;
+}
+
+.sidebar-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.sidebar-menu-item {
+  min-width: 0;
+}
+
+/* Enlaces */
+
+.sidebar-link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 44px;
+  padding: 0 12px;
+  color: #64748b;
+  text-decoration: none;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  transition:
+    color 160ms ease,
+    background 160ms ease,
+    border-color 160ms ease,
+    transform 160ms ease;
+}
+
+.sidebar-link:hover {
+  color: #2563eb;
+  background: #f4f7fc;
+}
+
+.sidebar-link:active {
+  transform: scale(0.99);
+}
+
+.sidebar-link:focus-visible {
+  outline: 3px solid rgb(37 99 235 / 25%);
+  outline-offset: 2px;
+}
+
+.sidebar-link-icon {
+  flex-shrink: 0;
+  color: #94a3b8;
+  transition: color 160ms ease;
+}
+
+.sidebar-link-label {
+  min-width: 0;
+  flex: 1;
+  font-size: 12.5px;
+  font-weight: 550;
+  line-height: 1.4;
+}
+
+.sidebar-link-active {
+  color: #2458c6;
+  background: #edf4ff;
+  border-color: #e0ebff;
+}
+
+.sidebar-link-active .sidebar-link-icon {
+  color: #2563eb;
+}
+
+.sidebar-link-active .sidebar-link-label {
+  font-weight: 700;
+}
+
+.sidebar-link-indicator {
+  flex-shrink: 0;
+  color: #2563eb;
+  opacity: 0;
+  transform: translateX(-3px);
+  transition:
+    opacity 160ms ease,
+    transform 160ms ease;
+}
+
+.sidebar-link-active .sidebar-link-indicator {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Insignias opcionales */
+
+.sidebar-link-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 22px;
+  height: 21px;
+  padding: 0 6px;
+  color: #b45309;
+  background: #fef3c7;
+  border-radius: 6px;
+  font-size: 10px;
+  font-weight: 750;
+}
+
+/* Zona inferior */
+
+.sidebar-bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+  padding-top: 24px;
+  margin-top: auto;
+}
+
+.sidebar-settings-link {
+  border-color: #edf1f6;
+}
+
+.sidebar-version {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 6px 2px;
+  border-top: 1px solid #edf1f6;
+}
+
+.sidebar-version-icon {
+  display: grid;
+  width: 34px;
+  height: 34px;
+  flex-shrink: 0;
+  place-items: center;
+  color: #0d9488;
+  background: #e6f7f4;
+  border-radius: 10px;
+}
+
+.sidebar-version-info {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.sidebar-version-name {
+  color: #475569;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.sidebar-version-number {
+  color: #94a3b8;
+  font-size: 10px;
+  line-height: 1.4;
+}
+
+/* Cabecera móvil del menú */
+
+.mobile-sidebar-header {
+  display: none;
+}
+
+/* Ajustes para pantallas pequeñas */
+
+@media (max-width: 768px) {
+  .app-sidebar {
+    z-index: 60;
+    width: min(290px, 86vw);
+    transform: translateX(-100%);
+    visibility: hidden;
+    transition:
+      transform 220ms ease,
+      visibility 220ms ease;
+  }
+
+  .app-sidebar.app-sidebar-open {
+    transform: translateX(0);
+    visibility: visible;
+  }
+
+  .mobile-sidebar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 0 4px 20px;
+  }
+
+  .mobile-sidebar-title {
+    color: #172033;
+    font-size: 16px;
+    font-weight: 750;
+  }
+
+  .mobile-close-button {
+    display: grid;
+    width: 36px;
+    height: 36px;
+    place-items: center;
+    color: #64748b;
+    background: #f1f5f9;
+    border: 0;
+    border-radius: 9px;
+    cursor: pointer;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sidebar-link,
+  .sidebar-link-icon,
+  .sidebar-link-indicator,
+  .app-sidebar {
+    transition: none;
+  }
+}
