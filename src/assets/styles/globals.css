@@ -1928,3 +1928,111 @@
     transition: none;
   }
 }
+
+/* =========================================
+   ALERT STATUS BADGE — LABGUARDIAN AI
+   ========================================= */
+
+.alert-status-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  width: fit-content;
+  max-width: 100%;
+  color: #475569;
+  border: 1px solid transparent;
+  border-radius: 7px;
+  font-weight: 700;
+  line-height: 1.3;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+.alert-status-badge-icon {
+  flex-shrink: 0;
+}
+
+/* Tamaños */
+
+.alert-status-badge-sm {
+  min-height: 23px;
+  padding: 4px 7px;
+  font-size: 10px;
+}
+
+.alert-status-badge-md {
+  min-height: 27px;
+  padding: 5px 9px;
+  font-size: 11px;
+}
+
+.alert-status-badge-lg {
+  min-height: 32px;
+  padding: 7px 11px;
+  font-size: 12px;
+}
+
+/* Activa: requiere atención */
+
+.alert-status-active {
+  color: #b91c1c;
+  background: #fef2f2;
+  border-color: #fecaca;
+}
+
+/* Reconocida: revisada por un usuario */
+
+.alert-status-acknowledged {
+  color: #1d4ed8;
+  background: #eff6ff;
+  border-color: #bfdbfe;
+}
+
+/* Resuelta */
+
+.alert-status-resolved {
+  color: #15803d;
+  background: #f0fdf4;
+  border-color: #bbf7d0;
+}
+
+/* Pendiente */
+
+.alert-status-pending {
+  color: #a16207;
+  background: #fefce8;
+  border-color: #fef08a;
+}
+
+/* En investigación */
+
+.alert-status-investigating {
+  color: #6d28d9;
+  background: #f5f3ff;
+  border-color: #ddd6fe;
+}
+
+/* Descartada */
+
+.alert-status-dismissed {
+  color: #475569;
+  background: #f1f5f9;
+  border-color: #cbd5e1;
+}
+
+/* Estados no reconocidos por el componente */
+
+.alert-status-unknown {
+  color: #475569;
+  background: #f8fafc;
+  border-color: #e2e8f0;
+}
+
+/* Accesibilidad */
+
+@media (prefers-reduced-motion: reduce) {
+  .alert-status-badge {
+    transition: none;
+  }
+}
