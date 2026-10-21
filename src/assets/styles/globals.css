@@ -1589,3 +1589,342 @@
     transition: none;
   }
 }
+
+/* =========================================
+   ALERT FILTERS — LABGUARDIAN AI
+   ========================================= */
+
+.alert-filters {
+  width: 100%;
+  padding: 21px;
+  background: #ffffff;
+  border: 1px solid #e8edf3;
+  border-radius: 15px;
+  box-shadow: 0 2px 5px rgb(15 23 42 / 2%);
+}
+
+.alert-filters-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 21px;
+}
+
+.alert-filters-heading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.alert-filters-heading-icon {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  place-items: center;
+  color: #2563eb;
+  background: #eff6ff;
+  border: 1px solid #dbeafe;
+  border-radius: 12px;
+}
+
+.alert-filters-title {
+  margin: 0;
+  color: #1e293b;
+  font-size: 15px;
+  font-weight: 750;
+  letter-spacing: -0.2px;
+}
+
+.alert-filters-description {
+  margin: 5px 0 0;
+  color: #94a3b8;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.alert-filters-toggle {
+  flex-shrink: 0;
+  padding: 8px 10px;
+  color: #64748b;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 11px;
+  font-weight: 650;
+  cursor: pointer;
+  transition:
+    color 160ms ease,
+    background 160ms ease;
+}
+
+.alert-filters-toggle:hover {
+  color: #2563eb;
+  background: #f8fafc;
+}
+
+/* Controles */
+
+.alert-filters-controls {
+  display: grid;
+  grid-template-columns: minmax(220px, 1.7fr) minmax(155px, 1fr) minmax(155px, 1fr) auto;
+  align-items: end;
+  gap: 14px;
+}
+
+.alert-filters-search {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  height: 43px;
+}
+
+.alert-filters-search-icon {
+  position: absolute;
+  left: 13px;
+  color: #94a3b8;
+  pointer-events: none;
+}
+
+.alert-filters-search input {
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  padding: 0 39px;
+  color: #334155;
+  background: #ffffff;
+  border: 1px solid #dfe6ef;
+  border-radius: 9px;
+  outline: none;
+  font: inherit;
+  font-size: 11px;
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.alert-filters-search input::placeholder {
+  color: #a0acbc;
+}
+
+.alert-filters-search input:focus {
+  border-color: #93b4fb;
+  box-shadow: 0 0 0 3px rgb(37 99 235 / 9%);
+}
+
+.alert-filters-search input:disabled,
+.alert-filters-select-group select:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.alert-filters-clear-search {
+  position: absolute;
+  right: 9px;
+  display: grid;
+  width: 25px;
+  height: 25px;
+  place-items: center;
+  color: #94a3b8;
+  background: transparent;
+  border: 0;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.alert-filters-clear-search:hover {
+  color: #475569;
+  background: #f1f5f9;
+}
+
+.alert-filters-clear-search:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* Selectores */
+
+.alert-filters-select-group {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.alert-filters-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #64748b;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.alert-filters-label svg {
+  color: #94a3b8;
+}
+
+.alert-filters-select-group select {
+  width: 100%;
+  height: 43px;
+  min-width: 0;
+  padding: 0 30px 0 11px;
+  color: #334155;
+  background-color: #ffffff;
+  border: 1px solid #dfe6ef;
+  border-radius: 9px;
+  outline: none;
+  font: inherit;
+  font-size: 11px;
+  cursor: pointer;
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.alert-filters-select-group select:focus {
+  border-color: #93b4fb;
+  box-shadow: 0 0 0 3px rgb(37 99 235 / 9%);
+}
+
+/* Botón limpiar */
+
+.alert-filters-reset {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  height: 43px;
+  padding: 0 12px;
+  color: #64748b;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 9px;
+  font-size: 11px;
+  font-weight: 650;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    color 160ms ease,
+    background 160ms ease;
+}
+
+.alert-filters-reset:hover:not(:disabled) {
+  color: #dc2626;
+  background: #fff7f7;
+  border-color: #fecaca;
+}
+
+.alert-filters-reset:disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+}
+
+/* Resumen */
+
+.alert-filters-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding-top: 15px;
+  margin-top: 19px;
+  border-top: 1px solid #edf1f6;
+}
+
+.alert-filters-summary {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #64748b;
+  font-size: 11px;
+}
+
+.alert-filters-summary-dot {
+  width: 7px;
+  height: 7px;
+  flex-shrink: 0;
+  background: #0d9488;
+  border-radius: 50%;
+}
+
+.alert-filters-active-count {
+  padding: 5px 8px;
+  color: #2563eb;
+  background: #eff6ff;
+  border: 1px solid #dbeafe;
+  border-radius: 6px;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+/* Responsive */
+
+@media (max-width: 1050px) {
+  .alert-filters-controls {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .alert-filters-search {
+    grid-column: 1 / -1;
+  }
+
+  .alert-filters-reset {
+    align-self: end;
+  }
+}
+
+@media (max-width: 560px) {
+  .alert-filters {
+    padding: 16px;
+  }
+
+  .alert-filters-header {
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .alert-filters-heading {
+    gap: 9px;
+  }
+
+  .alert-filters-heading-icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .alert-filters-description {
+    font-size: 10px;
+  }
+
+  .alert-filters-toggle {
+    padding: 7px;
+    font-size: 10px;
+  }
+
+  .alert-filters-controls {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 13px;
+  }
+
+  .alert-filters-search {
+    grid-column: auto;
+  }
+
+  .alert-filters-reset {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .alert-filters-toggle,
+  .alert-filters-search input,
+  .alert-filters-select-group select,
+  .alert-filters-reset {
+    transition: none;
+  }
+}
