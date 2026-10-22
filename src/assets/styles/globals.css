@@ -4541,3 +4541,275 @@
     padding: 16px;
   }
 }
+
+/* =========================================
+   MODAL — LABGUARDIAN AI
+   ========================================= */
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  overflow-y: auto;
+  background: rgba(15, 23, 42, 0.48);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  animation: modal-overlay-appear 180ms ease-out;
+  box-sizing: border-box;
+}
+
+.modal {
+  --modal-accent: #2563eb;
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-height: min(820px, calc(100vh - 48px));
+  max-height: min(820px, calc(100dvh - 48px));
+  overflow: hidden;
+  border: 1px solid #e5e7eb;
+  border-radius: 18px;
+  background: #ffffff;
+  color: #111827;
+  box-shadow:
+    0 24px 70px rgba(15, 23, 42, 0.18),
+    0 4px 12px rgba(15, 23, 42, 0.05);
+  outline: none;
+  animation: modal-window-appear 200ms ease-out;
+  box-sizing: border-box;
+}
+
+.modal--sm {
+  max-width: 400px;
+}
+
+.modal--md {
+  max-width: 540px;
+}
+
+.modal--lg {
+  max-width: 720px;
+}
+
+.modal--xl {
+  max-width: 960px;
+}
+
+.modal--full {
+  width: 100%;
+  max-width: none;
+  min-height: min(500px, calc(100vh - 48px));
+  min-height: min(500px, calc(100dvh - 48px));
+}
+
+/* Encabezado */
+
+.modal__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 22px 24px;
+  border-bottom: 1px solid #eef0f4;
+  background: #ffffff;
+}
+
+.modal__heading {
+  flex: 1;
+  min-width: 0;
+}
+
+.modal__title {
+  margin: 0;
+  color: #111827;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.45;
+  letter-spacing: -0.35px;
+  overflow-wrap: anywhere;
+}
+
+.modal__description {
+  margin: 6px 0 0;
+  color: #64748b;
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+/* Botón de cierre */
+
+.modal__close {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  margin: -4px -5px 0 0;
+  border: 1px solid transparent;
+  border-radius: 9px;
+  background: #f8fafc;
+  color: #64748b;
+  cursor: pointer;
+  transition:
+    background 160ms ease,
+    color 160ms ease,
+    border-color 160ms ease;
+}
+
+.modal__close:hover:not(:disabled) {
+  border-color: #e2e8f0;
+  background: #f1f5f9;
+  color: #111827;
+}
+
+.modal__close:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+}
+
+.modal__close:disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+}
+
+/* Contenido */
+
+.modal__body {
+  flex: 1 1 auto;
+  min-height: 0;
+  padding: 24px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  color: #374151;
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.modal__body > :first-child {
+  margin-top: 0;
+}
+
+.modal__body > :last-child {
+  margin-bottom: 0;
+}
+
+/* Pie de página y acciones */
+
+.modal__footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 16px 24px;
+  border-top: 1px solid #eef0f4;
+  background: #fcfcfd;
+}
+
+.modal__footer > * {
+  flex-shrink: 0;
+}
+
+/* Animaciones */
+
+@keyframes modal-overlay-appear {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes modal-window-appear {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.99);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Accesibilidad */
+
+@media (prefers-reduced-motion: reduce) {
+  .modal-overlay,
+  .modal {
+    animation: none;
+  }
+
+  .modal__close {
+    transition: none;
+  }
+}
+
+/* Tabletas y móviles */
+
+@media (max-width: 600px) {
+  .modal-overlay {
+    align-items: center;
+    padding: 14px;
+  }
+
+  .modal {
+    max-height: calc(100vh - 28px);
+    max-height: calc(100dvh - 28px);
+    border-radius: 14px;
+  }
+
+  .modal__header {
+    gap: 12px;
+    padding: 18px;
+  }
+
+  .modal__title {
+    font-size: 16px;
+  }
+
+  .modal__body {
+    padding: 18px;
+  }
+
+  .modal__footer {
+    padding: 14px 18px;
+  }
+
+  .modal--full {
+    min-height: calc(100vh - 28px);
+    min-height: calc(100dvh - 28px);
+  }
+}
+
+@media (max-width: 380px) {
+  .modal-overlay {
+    padding: 8px;
+  }
+
+  .modal {
+    max-height: calc(100vh - 16px);
+    max-height: calc(100dvh - 16px);
+  }
+
+  .modal__header {
+    padding: 15px;
+  }
+
+  .modal__body {
+    padding: 15px;
+  }
+
+  .modal__footer {
+    padding: 12px 15px;
+  }
+}
