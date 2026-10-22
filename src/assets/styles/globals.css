@@ -4131,3 +4131,246 @@
     max-width: 100%;
   }
 }
+
+
+/* =========================================
+   ERROR MESSAGE — LABGUARDIAN AI
+   ========================================= */
+
+.error-message {
+  --error-color: #dc2626;
+  --error-bg: #fef2f2;
+  --error-border: #fecaca;
+
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  width: 100%;
+  padding: 16px;
+  border: 1px solid var(--error-border);
+  border-radius: 12px;
+  background: var(--error-bg);
+  color: #1f2937;
+  box-sizing: border-box;
+  animation: error-message-appear 180ms ease-out;
+}
+
+.error-message--error {
+  --error-color: #dc2626;
+  --error-bg: #fef2f2;
+  --error-border: #fecaca;
+}
+
+.error-message--warning {
+  --error-color: #b45309;
+  --error-bg: #fffbeb;
+  --error-border: #fde68a;
+}
+
+.error-message--info {
+  --error-color: #2563eb;
+  --error-bg: #eff6ff;
+  --error-border: #bfdbfe;
+}
+
+.error-message__icon {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  color: var(--error-color);
+  background: rgba(255, 255, 255, 0.75);
+}
+
+.error-message__content {
+  flex: 1;
+  min-width: 0;
+}
+
+.error-message__title {
+  margin: 0;
+  color: #111827;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.error-message__description {
+  margin: 4px 0 0;
+  color: #4b5563;
+  font-size: 13px;
+  line-height: 1.65;
+  overflow-wrap: anywhere;
+}
+
+.error-message__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.error-message__retry {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 7px 11px;
+  border: 1px solid var(--error-border);
+  border-radius: 8px;
+  background: #ffffff;
+  color: var(--error-color);
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background 160ms ease,
+    border-color 160ms ease,
+    transform 160ms ease;
+}
+
+.error-message__retry:hover {
+  border-color: var(--error-color);
+  background: rgba(255, 255, 255, 0.65);
+}
+
+.error-message__retry:active {
+  transform: scale(0.98);
+}
+
+.error-message__retry:focus-visible,
+.error-message__dismiss:focus-visible {
+  outline: 2px solid var(--error-color);
+  outline-offset: 3px;
+}
+
+.error-message__dismiss {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  margin: -5px -5px 0 0;
+  border: none;
+  border-radius: 7px;
+  background: transparent;
+  color: #6b7280;
+  cursor: pointer;
+  transition:
+    color 160ms ease,
+    background 160ms ease;
+}
+
+.error-message__dismiss:hover {
+  background: rgba(0, 0, 0, 0.05);
+  color: #111827;
+}
+
+/* Tamaños */
+
+.error-message--sm {
+  gap: 9px;
+  padding: 10px 12px;
+  border-radius: 9px;
+}
+
+.error-message--sm .error-message__icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 7px;
+}
+
+.error-message--sm .error-message__title {
+  font-size: 12px;
+}
+
+.error-message--sm .error-message__description {
+  margin-top: 2px;
+  font-size: 12px;
+}
+
+.error-message--sm .error-message__actions {
+  margin-top: 8px;
+}
+
+.error-message--sm .error-message__retry {
+  padding: 5px 8px;
+  font-size: 11px;
+}
+
+.error-message--lg {
+  gap: 15px;
+  padding: 22px;
+  border-radius: 14px;
+}
+
+.error-message--lg .error-message__icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+}
+
+.error-message--lg .error-message__title {
+  font-size: 16px;
+}
+
+.error-message--lg .error-message__description {
+  margin-top: 6px;
+  font-size: 14px;
+}
+
+.error-message--lg .error-message__actions {
+  margin-top: 15px;
+}
+
+/* Animación */
+
+@keyframes error-message-appear {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Accesibilidad */
+
+@media (prefers-reduced-motion: reduce) {
+  .error-message {
+    animation: none;
+  }
+
+  .error-message__retry,
+  .error-message__dismiss {
+    transition: none;
+  }
+}
+
+/* Móviles */
+
+@media (max-width: 480px) {
+  .error-message {
+    gap: 9px;
+    padding: 12px;
+  }
+
+  .error-message__icon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .error-message__actions {
+    gap: 8px;
+  }
+}
