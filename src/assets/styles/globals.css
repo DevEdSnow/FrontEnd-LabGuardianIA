@@ -3136,3 +3136,217 @@
     transition: none;
   }
 }
+
+/* =========================================
+   COMMON CARD
+========================================= */
+
+.common-card {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  overflow: hidden;
+  color: #334155;
+  background: #ffffff;
+  border: 1px solid #e7edf4;
+  border-radius: 15px;
+}
+
+/* Variants */
+
+.common-card--default {
+  box-shadow: 0 2px 8px rgb(15 23 42 / 3%);
+}
+
+.common-card--outlined {
+  border-color: #dce5ef;
+  box-shadow: none;
+}
+
+.common-card--elevated {
+  border-color: #edf1f6;
+  box-shadow:
+    0 4px 8px rgb(15 23 42 / 3%),
+    0 12px 28px rgb(15 23 42 / 4%);
+}
+
+/* Header */
+
+.common-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-width: 0;
+  padding: 19px 21px;
+  border-bottom: 1px solid #edf1f6;
+}
+
+.common-card__header--no-border {
+  border-bottom: 0;
+}
+
+.common-card__heading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.common-card__header-icon {
+  display: inline-flex;
+  width: 38px;
+  height: 38px;
+  flex: 0 0 38px;
+  align-items: center;
+  justify-content: center;
+  color: #2563eb;
+  background: #eff6ff;
+  border: 1px solid #dbeafe;
+  border-radius: 10px;
+}
+
+.common-card__header-icon svg {
+  width: 19px;
+  height: 19px;
+}
+
+.common-card__heading-text {
+  min-width: 0;
+}
+
+.common-card__title {
+  margin: 0;
+  color: #1e293b;
+  font-size: 15px;
+  font-weight: 750;
+  line-height: 1.4;
+  letter-spacing: -0.25px;
+}
+
+.common-card__description {
+  margin: 5px 0 0;
+  color: #8491a4;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.common-card__actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+/* Body */
+
+.common-card__body {
+  flex: 1;
+  min-width: 0;
+}
+
+.common-card--padding-none .common-card__body {
+  padding: 0;
+}
+
+.common-card--padding-sm .common-card__body {
+  padding: 12px;
+}
+
+.common-card--padding-md .common-card__body {
+  padding: 20px;
+}
+
+.common-card--padding-lg .common-card__body {
+  padding: 26px;
+}
+
+.common-card__body--no-padding {
+  padding: 0 !important;
+}
+
+/* Footer */
+
+.common-card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 21px;
+  color: #64748b;
+  background: #fcfdff;
+  border-top: 1px solid #edf1f6;
+  font-size: 12px;
+}
+
+/* Interactive feedback for cards used as containers */
+
+.common-card--interactive {
+  cursor: pointer;
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease,
+    transform 160ms ease;
+}
+
+.common-card--interactive:hover {
+  border-color: #cbdcf3;
+  box-shadow: 0 8px 24px rgb(15 23 42 / 6%);
+  transform: translateY(-2px);
+}
+
+/* Responsive */
+
+@media (max-width: 640px) {
+  .common-card {
+    border-radius: 12px;
+  }
+
+  .common-card__header {
+    align-items: flex-start;
+    padding: 16px;
+  }
+
+  .common-card__heading {
+    gap: 10px;
+  }
+
+  .common-card__header-icon {
+    width: 34px;
+    height: 34px;
+    flex-basis: 34px;
+  }
+
+  .common-card__title {
+    font-size: 14px;
+  }
+
+  .common-card--padding-sm .common-card__body {
+    padding: 10px;
+  }
+
+  .common-card--padding-md .common-card__body {
+    padding: 16px;
+  }
+
+  .common-card--padding-lg .common-card__body {
+    padding: 18px;
+  }
+
+  .common-card__body--no-padding {
+    padding: 0 !important;
+  }
+
+  .common-card__footer {
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 13px 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .common-card--interactive {
+    transition: none;
+  }
+}
