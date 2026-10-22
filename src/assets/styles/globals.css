@@ -2898,3 +2898,241 @@
     transition: none;
   }
 }
+
+/* =========================================
+   COMMON BUTTON
+========================================= */
+
+.common-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-width: 0;
+  border: 1px solid transparent;
+  border-radius: 9px;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 650;
+  line-height: 1.3;
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  user-select: none;
+  transition:
+    background-color 160ms ease,
+    color 160ms ease,
+    border-color 160ms ease,
+    box-shadow 160ms ease,
+    transform 160ms ease;
+}
+
+.common-button:focus-visible {
+  outline: 3px solid rgb(59 130 246 / 30%);
+  outline-offset: 2px;
+}
+
+.common-button:active:not(:disabled) {
+  transform: translateY(1px);
+}
+
+.common-button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+}
+
+/* Sizes */
+
+.common-button--sm {
+  min-height: 32px;
+  padding: 6px 10px;
+  border-radius: 7px;
+  font-size: 12px;
+}
+
+.common-button--md {
+  min-height: 38px;
+  padding: 9px 14px;
+}
+
+.common-button--lg {
+  min-height: 44px;
+  padding: 11px 18px;
+  border-radius: 10px;
+  font-size: 14px;
+}
+
+/* Primary */
+
+.common-button--primary {
+  color: #ffffff;
+  background: #2563eb;
+  border-color: #2563eb;
+  box-shadow: 0 2px 4px rgb(37 99 235 / 12%);
+}
+
+.common-button--primary:hover:not(:disabled) {
+  background: #1d4ed8;
+  border-color: #1d4ed8;
+  box-shadow: 0 4px 10px rgb(37 99 235 / 18%);
+}
+
+/* Secondary */
+
+.common-button--secondary {
+  color: #334155;
+  background: #f1f5f9;
+  border-color: #e2e8f0;
+}
+
+.common-button--secondary:hover:not(:disabled) {
+  color: #1e293b;
+  background: #e8eef5;
+  border-color: #cbd5e1;
+}
+
+/* Outline */
+
+.common-button--outline {
+  color: #2563eb;
+  background: #ffffff;
+  border-color: #bfdbfe;
+}
+
+.common-button--outline:hover:not(:disabled) {
+  background: #eff6ff;
+  border-color: #93c5fd;
+}
+
+/* Ghost */
+
+.common-button--ghost {
+  color: #64748b;
+  background: transparent;
+  border-color: transparent;
+}
+
+.common-button--ghost:hover:not(:disabled) {
+  color: #1e40af;
+  background: #eff6ff;
+}
+
+/* Danger */
+
+.common-button--danger {
+  color: #ffffff;
+  background: #dc2626;
+  border-color: #dc2626;
+  box-shadow: 0 2px 4px rgb(220 38 38 / 10%);
+}
+
+.common-button--danger:hover:not(:disabled) {
+  background: #b91c1c;
+  border-color: #b91c1c;
+  box-shadow: 0 4px 10px rgb(220 38 38 / 16%);
+}
+
+/* Success */
+
+.common-button--success {
+  color: #ffffff;
+  background: #059669;
+  border-color: #059669;
+}
+
+.common-button--success:hover:not(:disabled) {
+  background: #047857;
+  border-color: #047857;
+}
+
+/* Link */
+
+.common-button--link {
+  min-height: auto;
+  padding: 3px;
+  color: #2563eb;
+  background: transparent;
+  border-color: transparent;
+  border-radius: 4px;
+}
+
+.common-button--link:hover:not(:disabled) {
+  color: #1d4ed8;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* Width */
+
+.common-button--full-width {
+  display: flex;
+  width: 100%;
+}
+
+/* Icons */
+
+.common-button__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.common-button__icon svg {
+  width: 16px;
+  height: 16px;
+}
+
+.common-button--sm .common-button__icon svg {
+  width: 14px;
+  height: 14px;
+}
+
+.common-button--lg .common-button__icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+.common-button__label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+}
+
+/* Loading */
+
+.common-button__spinner {
+  width: 15px;
+  height: 15px;
+  flex: 0 0 15px;
+  border: 2px solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: common-button-spin 650ms linear infinite;
+}
+
+.common-button--lg .common-button__spinner {
+  width: 17px;
+  height: 17px;
+  flex-basis: 17px;
+}
+
+@keyframes common-button-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Reduced motion */
+
+@media (prefers-reduced-motion: reduce) {
+  .common-button,
+  .common-button__spinner {
+    animation: none;
+    transition: none;
+  }
+}
